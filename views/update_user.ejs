@@ -1,0 +1,53 @@
+<%- include('include/_header') %>
+
+    <main>
+        <div>
+            <a href="/">All users</a>
+        </div>
+        <div>use this form to update user information</div>
+
+        <div>
+            <form method="POST" id="update_user">
+                <div>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="hidden" name="id" value="<%= user._id %>">
+                        <input type="text" name="name" value="<%= user.name %>" placeholder="Dravid kol">
+                    </div>
+                    <div>
+                        <label for="Email">Email</label>
+                        <input type="text" name="email" value="<%= user.email %>" placeholder="example@gmail.com">
+            
+                    </div>
+                    <div>
+                        <label for="gender">Gender</label>
+                        <div>
+                            <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %> >
+                            <label for="radio-2">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio-3" name="gender" value="Female" <&= user.gender == 'Female' ? 'checked' : '' %> >
+                            <label for="radio-3">Female</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="status">Status</label>
+                        <div>
+                            <input type="radio" id="radio-4" name="status" value="Active" <%= user.status == 'Active' ? 'checked' : '' %> >
+                            <label for="radio-4">Active</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.status == 'Inactive' ? 'checked' : '' %> >
+                            <label for="radio-5">Inactive</label>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <%- include('include/_footer') %>
